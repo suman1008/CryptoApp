@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'application'
+    'application',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +77,13 @@ WSGI_APPLICATION = 'cp.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+'''DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cryptoapp',
         'HOST': '127.0.0.1',
@@ -84,7 +91,7 @@ DATABASES = {
         'USER': 'dev',
         'PASSWORD': 'Sw@miji123',
     }
-}
+}'''
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
