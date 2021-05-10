@@ -6,3 +6,11 @@ Selling Price (SP) (blank=True)
 Value Invested ( = (Qty  CP)-(Qty  SP) )
 Asset’s current value should be stored in a variable (ACV) by using
 CoinMarketCap API and used during calculations. (developer can use a better way if they have one)’’’
+
+Model 6: Employee DB (EMP DB)
+Name of Employee
+Employee Code
+Position
+Username
+Password
+

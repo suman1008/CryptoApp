@@ -2,6 +2,14 @@ from django.db import models
 
 # Create your models here.
 
+#class Employee(models.Model):
+#    Positions = [('TRADER',), ('HR',), ('ANALYST',), ('ADMIN',)]
+#    Employee_Id = models.AutoField(primary_key=True)
+#    Employee_Name = models.CharField(max_length=70, unique=False, blank=False)
+#    Position = models.Choices(Positions)
+#    UserName = models.CharField(max_length=70, unique=False, blank=False)
+ #   Password = models.CharField(max_length=70, unique=False, blank=False)
+
 class ASSETS(models.Model):
     Asset_Name = models.CharField(max_length=10, unique=True, blank=False, primary_key=True)
 

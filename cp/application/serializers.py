@@ -22,6 +22,6 @@ class INV_DBSerializer(serializers.ModelSerializer):
 
 class ASSETSSerializer(serializers.ModelSerializer):
     class Meta:
-        model = INV_DB
+        model = ASSETS
         fields = ['Asset_Name']
 
