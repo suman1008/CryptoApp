@@ -12,6 +12,8 @@ from django.db import models
 
 class ASSETS(models.Model):
     Asset_Name = models.CharField(max_length=10, unique=True, blank=False, primary_key=True)
+    def __str__(self):
+        return self.Asset_Name
 
 class CustomerDetails(models.Model):
     C_ID = models.CharField(max_length=10, unique=True, blank=False, primary_key=True)
@@ -24,6 +26,9 @@ class CustomerDetails(models.Model):
     Email = models.CharField(max_length=100, unique=True, blank=True)
     Birth_Date = models.DateField(default=00 - 00 - 0000)
 
+    def __str__(self):
+        return self.Customer_Name, self.C_ID
+
 class TRX_CENTRAL(models.Model):
     TRX_ID = models.CharField(max_length=70, unique=True, blank=False)
     customer_ID = models.ForeignKey(CustomerDetails, on_delete=models.PROTECT, related_name='CID')
@@ -33,7 +38,7 @@ class TRX_CENTRAL(models.Model):
     Date_Time_Stamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.Name
+        return self.Name, self.Amount_USD, self.Date_Time_Stamp
 
 class INV_DB(models.Model):
     auto_id = models.AutoField(primary_key=True)
@@ -42,6 +47,9 @@ class INV_DB(models.Model):
     CP = models.FloatField(unique=False, blank=True, default=0)
     SP = models.FloatField(unique=False, blank=True, default=0)
 
+
+    def __str__(self):
+        return self.Asset_Name, self.Qty, self.CP, self.SP
     # def ValueInvested(self):
     # Value_Invested = sum(Qty*CP)-sum(Qty*SP);
 
